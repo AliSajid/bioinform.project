@@ -1,19 +1,15 @@
-Demographics <- function(data, Age, Age_Cat, Gender, Race, Ethnicity){
+Demographics <- function(data, Age, Gender, Race, Ethnicity){
   #############################################################################
+  if(missing(Age)){
+    1
+  }else{
   Age <- rlang::sym(quo_name(enquo(Age)))
   ggp <- ggplot(data = data,
                 aes(x = !! Age)) +
     geom_density(color = 'darkblue', fill = 'lightblue') +
     ggtitle("Age Distribution")
 
-  print(ggp)
-  #############################################################################
-  Age_Cat <- rlang::sym(quo_name(enquo(Age_Cat)))
-  ggp <- ggplot(data = data,
-                aes(x = Age_Cat)) +
-    geom_bar(color="blue", fill=rgb(0.1,0.4,0.5,0.7))
-  print(ggp)
-
+  print(ggp)}
   #############################################################################
 
   Gender <- rlang::sym(quo_name(enquo(Gender)))
@@ -37,3 +33,4 @@ Demographics <- function(data, Age, Age_Cat, Gender, Race, Ethnicity){
 
   ############################################################################
 }
+
