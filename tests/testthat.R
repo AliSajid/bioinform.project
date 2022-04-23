@@ -1,4 +1,4 @@
 library(testthat)
-library(bioinform.project)
+library(clinalyzeR)
 
-test_check("bioinform.project")
+test_check("clinalyzeR")

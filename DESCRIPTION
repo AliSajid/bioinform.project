@@ -5,7 +5,7 @@ Date: 2022-04-23
 Authors@R: 
     c(person(c("Ali", "Sajid"), "Imami", , "Ali.Sajid.Imami@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-3684-3539")),
-      person(c("Gabby"), "Vento", , "christopher.vento@rockets.utoledo.edu", role = c("aut", "cre"),
+      person(c("Gabby"), "Vento", , "christopher.vento@rockets.utoledo.edu", role = c("aut"),
            comment = c(ORCID = "0000-0001-9516-3694")))
 Description: What the package does (one paragraph).
 License: GPL-3.0
