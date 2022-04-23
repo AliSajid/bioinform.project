@@ -6,41 +6,45 @@ output: github_document
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
+    collapse = TRUE,
+    comment = "#>",
+    fig.path = "man/figures/README-",
+    out.width = "100%"
 )
 ```
 
-# bioinform.project
+# clinalyzeR
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/AliSajid/bioinform.project/workflows/R-CMD-check/badge.svg)](https://github.com/AliSajid/bioinform.project/actions)
+[![GitHub issues](https://img.shields.io/github/issues/AliSajid/clinalyzeR)](https://github.com/AliSajid/clinalyzeR/issues)
+[![GitHub pulls](https://img.shields.io/github/issues-pr/AliSajid/clinalyzeR)](https://github.com/AliSajid/clinalyzeR/pulls)
 <!-- badges: end -->
 
-The goal of bioinform.project is to ...
+The goal of `clinalyzeR` is to ...
 
-## Installation
+## Installation instructions
 
-You can install the released version of bioinform.project from [CRAN](https://CRAN.R-project.org) with:
+Get the latest stable `R` release from [CRAN](http://cran.r-project.org/). Then install `clinalyzeR` from [Bioconductor](http://bioconductor.org/) using the following code:
 
-``` r
-install.packages("bioinform.project")
+```{r 'install', eval = FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+    install.packages("BiocManager")
+}
+
+BiocManager::install("clinalyzeR")
 ```
 
-And the development version from [GitHub](https://github.com/) with:
+And the development version from [GitHub](https://github.com/AliSajid/clinalyzeR) with:
 
-``` r
-# install.packages("devtools")
-devtools::install_github("AliSajid/bioinform.project")
+```{r 'install_dev', eval = FALSE}
+BiocManager::install("AliSajid/clinalyzeR")
 ```
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
-#library(bioinform.project)
+```{r example, eval = requireNamespace('clinalyzeR')}
+library("clinalyzeR")
 ## basic example code
 ```
 
@@ -50,7 +54,7 @@ What is special about using `README.Rmd` instead of just `README.md`? You can in
 summary(cars)
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/master/examples>.
+You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
 
 You can also embed plots, for example:
 
@@ -58,4 +62,33 @@ You can also embed plots, for example:
 plot(pressure)
 ```
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+
+## Citation
+
+Below is the citation output from using `citation('clinalyzeR')` in R. Please
+run this yourself to check for any updates on how to cite __clinalyzeR__.
+
+```{r 'citation', eval = requireNamespace('clinalyzeR')}
+print(citation('clinalyzeR'), bibtex = TRUE)
+```
+
+Please note that the `clinalyzeR` was only made possible thanks to many other R and bioinformatics software authors, which are cited either in the vignettes and/or the paper(s) describing this package.
+
+## Code of Conduct
+
+Please note that the `clinalyzeR` project is released with a [Contributor Code of Conduct](http://bioconductor.org/about/code-of-conduct/). By contributing to this project, you agree to abide by its terms.
+
+## Development tools
+
+* Continuous code testing is possible thanks to [GitHub actions](https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/)  through `r BiocStyle::CRANpkg('usethis')`, `r BiocStyle::CRANpkg('remotes')`, and `r BiocStyle::CRANpkg('rcmdcheck')` customized to use [Bioconductor's docker containers](https://www.bioconductor.org/help/docker/) and `r BiocStyle::Biocpkg('BiocCheck')`.
+* Code coverage assessment is possible thanks to [codecov](https://codecov.io/gh) and `r BiocStyle::CRANpkg('covr')`.
+* The [documentation website](http://AliSajid.github.io/clinalyzeR) is automatically updated thanks to `r BiocStyle::CRANpkg('pkgdown')`.
+* The code is styled automatically thanks to `r BiocStyle::CRANpkg('styler')`.
+* The documentation is formatted thanks to `r BiocStyle::CRANpkg('devtools')` and `r BiocStyle::CRANpkg('roxygen2')`.
+
+For more details, check the `dev` directory.
+
+This package was developed using `r BiocStyle::Biocpkg('biocthis')`.
+
+

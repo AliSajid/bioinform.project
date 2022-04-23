@@ -1,29 +1,37 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# bioinform.project
+# clinalyzeR
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/AliSajid/bioinform.project/workflows/R-CMD-check/badge.svg)](https://github.com/AliSajid/bioinform.project/actions)
+[![GitHub
+issues](https://img.shields.io/github/issues/AliSajid/clinalyzeR)](https://github.com/AliSajid/clinalyzeR/issues)
+[![GitHub
+pulls](https://img.shields.io/github/issues-pr/AliSajid/clinalyzeR)](https://github.com/AliSajid/clinalyzeR/pulls)
 <!-- badges: end -->
 
-The goal of bioinform.project is to …
+The goal of `clinalyzeR` is to …
 
-## Installation
+## Installation instructions
 
-You can install the released version of bioinform.project from
-[CRAN](https://CRAN.R-project.org) with:
+Get the latest stable `R` release from
+[CRAN](http://cran.r-project.org/). Then install `clinalyzeR` from
+[Bioconductor](http://bioconductor.org/) using the following code:
 
 ``` r
-install.packages("bioinform.project")
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+    install.packages("BiocManager")
+}
+
+BiocManager::install("clinalyzeR")
 ```
 
-And the development version from [GitHub](https://github.com/) with:
+And the development version from
+[GitHub](https://github.com/AliSajid/clinalyzeR) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("AliSajid/bioinform.project")
+BiocManager::install("AliSajid/clinalyzeR")
 ```
 
 ## Example
@@ -31,7 +39,7 @@ devtools::install_github("AliSajid/bioinform.project")
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-#library(bioinform.project)
+library("clinalyzeR")
 ## basic example code
 ```
 
@@ -50,14 +58,59 @@ summary(cars)
 ```
 
 You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/master/examples>.
+up-to-date.
 
 You can also embed plots, for example:
 
 <img src="man/figures/README-pressure-1.png" width="100%" />
 
 In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+files, so they display on GitHub!
+
+## Citation
+
+Below is the citation output from using `citation('clinalyzeR')` in R.
+Please run this yourself to check for any updates on how to cite
+**clinalyzeR**.
+
+``` r
+print(citation('clinalyzeR'), bibtex = TRUE)
+```
+
+Please note that the `clinalyzeR` was only made possible thanks to many
+other R and bioinformatics software authors, which are cited either in
+the vignettes and/or the paper(s) describing this package.
+
+## Code of Conduct
+
+Please note that the `clinalyzeR` project is released with a
+[Contributor Code of
+Conduct](http://bioconductor.org/about/code-of-conduct/). By
+contributing to this project, you agree to abide by its terms.
+
+## Development tools
+
+-   Continuous code testing is possible thanks to [GitHub
+    actions](https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/)
+    through *[usethis](https://CRAN.R-project.org/package=usethis)*,
+    *[remotes](https://CRAN.R-project.org/package=remotes)*, and
+    *[rcmdcheck](https://CRAN.R-project.org/package=rcmdcheck)*
+    customized to use [Bioconductor’s docker
+    containers](https://www.bioconductor.org/help/docker/) and
+    *[BiocCheck](https://bioconductor.org/packages/3.14/BiocCheck)*.
+-   Code coverage assessment is possible thanks to
+    [codecov](https://codecov.io/gh) and
+    *[covr](https://CRAN.R-project.org/package=covr)*.
+-   The [documentation website](http://AliSajid.github.io/clinalyzeR) is
+    automatically updated thanks to
+    *[pkgdown](https://CRAN.R-project.org/package=pkgdown)*.
+-   The code is styled automatically thanks to
+    *[styler](https://CRAN.R-project.org/package=styler)*.
+-   The documentation is formatted thanks to
+    *[devtools](https://CRAN.R-project.org/package=devtools)* and
+    *[roxygen2](https://CRAN.R-project.org/package=roxygen2)*.
+
+For more details, check the `dev` directory.
+
+This package was developed using
+*[biocthis](https://bioconductor.org/packages/3.14/biocthis)*.
